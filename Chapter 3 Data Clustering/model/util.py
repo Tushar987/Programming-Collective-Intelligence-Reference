@@ -7,6 +7,10 @@ class Util(object):
     """
     @staticmethod
     def read_file(file_name):
+        """
+        This function reads the file blogdata.txt file
+        :param file_name:
+        """
         lines = [line for line in file(file_name)]
         # First line is the column title
         column_names, row_names, data = lines[0].strip().split('\t')[1:], list(), list()
@@ -20,6 +24,12 @@ class Util(object):
 
     @staticmethod
     def pearson_correlation_score(a, b, n):
+        """
+        This function calculates the pearson correlation score of two vectors
+        :param a: vector a
+        :param b: vector b
+        :param n: length of vector a or vector b
+        """
         # Sum of array
         sum1, sum2 = sum(a), sum(b)
         # Square sum of array

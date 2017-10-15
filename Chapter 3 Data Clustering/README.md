@@ -1,28 +1,25 @@
-# Recommendation System
+# Data Clustering
 
 ### ABOUT
 ___
-This project develops a recommendation system engine that can be used to predict the favourable output from a given dataset.
-
+This project develops a  data clustering algorithm using hierarchial clustering.
 It consists of 2 modules ```data``` and ```model```
 #### ```data```
 This module consists of classes responsible for operations on dataset like data cleaning, data structuring etc.
 Currently it uses the Movie lens dataset but it can be used on various other dataset as long as the structure remains the same for the given ```model```
 #### ```model```
-This module consists of our model that learns from the given dataset, and provides the output in test phase. Currently it is using ```pearson correlation``` metric.
-
+This module consists of our model that is responsible for converting the data into various clusters.
 
 ### USAGE
 ___
 ```
-from data import Dataset
-from model import Model
+from data import Generator
 
 
-temp = Dataset()
-temp.clean()
-obj = Model(temp)
-print(obj.recommend_items('77'))
+obj = Generator('data/feedlist.txt')
+obj.parse()
+obj.filter()
+obj.write()
 ```
 
 
