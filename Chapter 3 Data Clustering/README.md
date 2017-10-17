@@ -25,6 +25,9 @@ blog_names, word, data = Util.read_file('data/blogdata.txt')
 obj = HierarchialCluster()
 obj.generate(data)
 obj.traverse(labels=blog_names)
+draw_obj = Graphics(obj.get_root(), blog_names)
+draw_obj.draw('img/blog_cluster.jpg')
+
 ```
 
 
